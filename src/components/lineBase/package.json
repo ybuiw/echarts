@@ -1,5 +1,5 @@
 {
-  "name": "@echarts/line-base",
+  "name": "@ahwecharts/line-base",
   "version": "0.0.1",
   "description": "echarts line base component",
   "main": "lib/cjs/index.js",
