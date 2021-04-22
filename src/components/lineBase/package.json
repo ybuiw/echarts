@@ -1,0 +1,28 @@
+{
+  "name": "@echarts/line-base",
+  "version": "0.0.1",
+  "description": "echarts line base component",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ybuiw/ahwui.git"
+  },
+  "keywords": [
+    "react",
+    "react-echarts",
+    "echarts line base",
+    "ahwui echarts line base"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "uub",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
