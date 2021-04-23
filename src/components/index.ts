@@ -1,2 +1,3 @@
-export { default as LineBase } from './lineBase/src';
-export { default as BarBase } from './barBase/src';
+export { default as LineBaseEcharts } from './lineBase/src';
+export { default as BarBaseEcharts } from './barBase/src';
+export { default as PieBaseEcharts } from './pieBase/src';

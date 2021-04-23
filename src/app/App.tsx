@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-// import  { BarBase } from '../components'
-import { BarBaseEcharts } from 'ahwecharts'
-//import BarBaseEcharts from '@ahwecharts/bar-base'
+import  { PieBaseEcharts } from '../components'
+// import { BarBaseEcharts } from 'ahwecharts'
 import './App.css';
 
 const App = () => {
   const [color, setColor] = useState<string[]>(['#f00'])
   const [item, setItem] = useState<any[]>([
-    { name: 'Mon', value: 150},
-    { name: 'Tue', value: 230},
+    { name: 'Mon', value: 20},
+    { name: 'Tue', value: 30},
     { name: 'Wed', value: 224},
     { name: 'Thu', value: 218},
     { name: 'Fri', value: 135},
@@ -17,7 +16,7 @@ const App = () => {
   ])
   const a = () => {
     setItem([
-      { name: 'Mon', value: 2150},
+      { name: 'MonMonMonMonMon', value: 2150},
       { name: 'Tue', value: 1230},
       { name: 'Wed', value: 1224},
       { name: 'Thu', value: 1218},
@@ -29,7 +28,7 @@ const App = () => {
   }
   const b = () => {
     setItem([
-      { name: 'Mon', value: 150},
+      { name: 'MonMonMonMonMon', value: 150},
       { name: 'Tue', value: 230},
       { name: 'Wed', value: 224},
       { name: 'Thu', value: 218},
@@ -43,17 +42,20 @@ const App = () => {
     <div className="App">
       <button onClick={a}>click mi</button>
       <button onClick={b}>click mi</button>
-      <BarBaseEcharts height="300px"
-        colors={color}
+      <PieBaseEcharts height="300px"
         isSwitch
-        areaStyle={{
+        label={{
           show: true,
-          isGrad: true,
-          // color: ['#ff0000', 'rgba(225, 225, 225, 0.5)']
+          formatter: '{b}\n{d}',
+          length: 20,
+          length2: 50,
         }}
-        itemStyle={{
-          barWidth: 20,
-          borderRadius: [5,5,5,5]
+        legend={{
+          show: true,
+        }}
+        series={{
+          radius: ['40%', '70%'],
+          center: ['50%', '40%']
         }}
         data={item}
       />

@@ -1,6 +1,6 @@
 react echarts line base
 ===
-基础线性echarts图表。提取常用api进行封装的echarts插件。
+基础柱状图echarts图表。提取常用api进行封装的echarts插件。
 
 ### 安装
 
