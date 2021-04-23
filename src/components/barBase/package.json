@@ -1,0 +1,28 @@
+{
+  "name": "@ahwecharts/bar-base",
+  "version": "0.0.1",
+  "description": "echarts bar base component",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ybuiw/echarts"
+  },
+  "keywords": [
+    "react",
+    "react-echarts",
+    "echarts bar base",
+    "ahwui echarts bar base"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "uub",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

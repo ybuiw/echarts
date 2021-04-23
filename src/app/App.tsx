@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  { LineBase } from '../components'
+import  { BarBase } from '../components'
 import './App.css';
 
 const App = () => {
@@ -41,15 +41,17 @@ const App = () => {
     <div className="App">
       <button onClick={a}>click mi</button>
       <button onClick={b}>click mi</button>
-      <LineBase height="300px"
-        smooth
+      <BarBase height="300px"
         colors={color}
         isSwitch
-        switchTime={1000}
         areaStyle={{
           show: true,
           isGrad: true,
-          color: ['#ff0', 'rgba(255, 255, 255, 0)']
+          // color: ['#ff0000', 'rgba(225, 225, 225, 0.5)']
+        }}
+        itemStyle={{
+          barWidth: 20,
+          borderRadius: [5,5,5,5]
         }}
         data={item}
       />
