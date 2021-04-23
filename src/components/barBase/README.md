@@ -11,19 +11,22 @@ npm install --save @ahwecharts/bar-base
 ### 引入
 
 ```jsx
-import BarBase from '@ahwecharts/bar-base';
+import BarBaseEcharts from '@ahwecharts/bar-base';
+or
+import { BarBaseEcharts } from 'ahwecharts';
 ```
+
 
 ### 基本用法
 
 <!--DemoStart,bgWhite,codePen,codeSandbox--> 
 ```js
 import ReactDOM from 'react-dom';
-import Button from '@ahwecharts/bar-base';
+import BarBaseEcharts from '@ahwecharts/bar-base';
 
 ReactDOM.render(
   <div>
-    <BarBase
+    <BarBaseEcharts
       smooth
       colors={['#f00']}
       areaStyle={{

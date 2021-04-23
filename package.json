@@ -25,6 +25,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@ahwecharts/bar-base": "0.0.1",
+    "@ahwecharts/line-base": "0.0.3",
     "echarts": "^5.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",

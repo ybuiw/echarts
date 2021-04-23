@@ -1,7 +1,7 @@
 {
-  "name": "@ahwecharts/line-base",
-  "version": "0.0.4",
-  "description": "echarts line base component",
+  "name": "ahwecharts",
+  "version": "0.0.1",
+  "description": "echarts component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "repository": {
@@ -11,8 +11,8 @@
   "keywords": [
     "react",
     "react-echarts",
-    "echarts line base",
-    "ahwui echarts line base"
+    "echarts",
+    "ahwecharts echarts"
   ],
   "publishConfig": {
     "access": "public"
@@ -26,6 +26,8 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
+    "@ahwecharts/bar-base": "0.0.2",
+    "@ahwecharts/line-base": "0.0.4",
     "echarts": "^5.0.2"
   }
 }

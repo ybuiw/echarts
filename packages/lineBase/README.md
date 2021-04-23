@@ -11,7 +11,9 @@ npm install --save @ahwecharts/line-base
 ### 引入
 
 ```jsx
-import LineBase from '@ahwecharts/line-base';
+import LineBaseEcharts from '@ahwecharts/line-base';
+or
+import { LineBaseEcharts } from 'ahwecharts';
 ```
 
 ### 基本用法
@@ -19,11 +21,11 @@ import LineBase from '@ahwecharts/line-base';
 <!--DemoStart,bgWhite,codePen,codeSandbox--> 
 ```js
 import ReactDOM from 'react-dom';
-import Button from '@ahwecharts/line-base';
+import LineBaseEcharts from '@ahwecharts/line-base';
 
 ReactDOM.render(
   <div>
-    <LineBase
+    <LineBaseEcharts
       smooth
       colors={['#f00']}
       areaStyle={{
