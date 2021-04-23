@@ -1,6 +1,6 @@
 {
   "name": "ahwecharts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "echarts component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -26,8 +26,8 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@ahwecharts/bar-base": "0.0.4",
-    "@ahwecharts/line-base": "0.0.5",
+    "@ahwecharts/bar-base": "1.0.0",
+    "@ahwecharts/line-base": "1.0.0",
     "echarts": "^5.0.2"
   }
 }
