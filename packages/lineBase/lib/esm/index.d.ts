@@ -36,6 +36,10 @@ interface LineBaseProps {
     fontSize?: number | string;
     /** 折线颜色 */
     colors?: string[];
+    /** 是否自动切换 Tooltip */
+    isSwitch?: boolean;
+    /** 自动切换事件 默认 2000（2S） */
+    switchTime?: number;
     /** 区域填充样式 */
     areaStyle?: areaStyleProps;
     /**

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import * as echarts from 'echarts/core';
 import { GridComponent, TooltipComponent, GridComponentOption } from 'echarts/components';
@@ -48,6 +48,10 @@ interface LineBaseProps {
   fontSize?: number | string;
   /** 折线颜色 */
   colors?: string[];
+  /** 是否自动切换 Tooltip */
+  isSwitch?: boolean;
+  /** 自动切换事件 默认 2000（2S） */
+  switchTime?: number;
   /** 区域填充样式 */
   areaStyle?: areaStyleProps;
   /**
@@ -88,151 +92,188 @@ const EChartsBar = (props: LineBaseProps) => {
     yAxis = {},
     grid = {},
     areaStyle = {},
+    isSwitch = false,
+    switchTime = 2000,
     onClick
   } = props;
 
-  console.log(grid)
-
   const chartRef = useRef<any>(null)
-  let myChart: any = null;
+  const [myChart, setMyChart] = useState<any>(null);
+  const [isHigh] = useState<boolean>(false);
+  const [highIndex, setHighIndex] = useState<number>(0);
+  
+
   useEffect(() => {
-    myChart = echarts.init(chartRef.current);
-    myChart.clear();
-    const _names: string[] = [];
-    data.length > 0 && data.map((item: any) => {
-      _names.push(item.name);
-    })
-    const _grid: GridComponentOption = {...{
-      top: '5%',
-      bottom: '10%',
-      left: '10%',
-      right: '5%',
-    }, ...grid};
-    const _xAxis: any = {
-      type: 'category',
-      boundaryGap: false,
-      axisLabel: {
-        color: xAxis.color ? xAxis.color : color,
-        fontSize: xAxis.fontSize ? xAxis.fontSize : fontSize,
-        rotate: xAxis.rotate ? xAxis.rotate : 0,
-      },
-      axisLine: {
-        show: xAxis.lineColor === false ? false : true,
-        lineStyle: {
-          color: xAxis.lineColor ? xAxis.lineColor : lineColor,
-        }
-      },
-      axisTick: {
-        show: xAxis.isTick,
-      },
-      splitLine: {
-        show: xAxis.splitColor ? true : false,
-        lineStyle: {
-          color: xAxis.splitColor ? xAxis.splitColor : splitColor,
-        }
-      },
-      data: _names
-    }
-    const _yAxis: any = {
-      name: yAxis.name,
-      type: 'value',
-      axisLabel: {
-        color: yAxis.color ? yAxis.color : color,
-        fontSize: yAxis.fontSize ? yAxis.fontSize : fontSize,
-      },
-      axisLine: {
-        show: yAxis.lineColor === false ? false : true,
-        lineStyle: {
-          color: yAxis.lineColor ? yAxis.lineColor : lineColor,
-        },
-      },
-      axisTick: {
-        show: false,
-      },
-      splitLine: {
-        show: yAxis.splitColor === false ? false : true,
-        lineStyle: {
-          color: yAxis.splitColor ? yAxis.splitColor : splitColor,
-        }
-      },
-    }
-    let _areaColor: any;
-    if (areaStyle.isGrad) {
-      if (Array.isArray(areaStyle.color) && areaStyle.color.length > 1) {
-        _areaColor = {
-          type: 'linear',
-          x: 0,
-          y: 0,
-          x2: 0,
-          y2: 1,
-          colorStops: [{
-            offset: 0, color: areaStyle.color[0]
-          }, {
-              offset: 1, color: areaStyle.color[1]
-          }],
-          global: false
-        }
-      } else {
-        _areaColor = {
-          type: 'linear',
-          x: 0,
-          y: 0,
-          x2: 0,
-          y2: 1,
-          colorStops: [{
-            offset: 0, color: colors[0]
-          }, {
-            offset: 1, color: 'rgba(255,255,255,0)'
-          }],
-          global: false
-        }
-      }
-    }
-    myChart.setOption({
-      tooltip: {
-        trigger: 'axis',
-        transitionDuration: 0,
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      color: colors,
-      grid: _grid,
-      xAxis: _xAxis,
-      yAxis: _yAxis,
-      series: [
-        {
-          data: data,
-          type: 'line',
-          smooth: smooth,
-          areaStyle: areaStyle.show ? {
-            color: _areaColor
-          } : undefined,
-          lineStyle: {
-            width: 1
-          }
-        }
-      ]
-    }, true);
-    window.addEventListener("resize", myChart.resize);
-    window.addEventListener('load', myChart.resize, false);
-    myChart.off('click');
-    myChart.on('click', (v: any) => {
+    let _myChart: any = echarts.init(chartRef.current);
+    setMyChart(_myChart)
+
+    window.addEventListener("resize", _myChart.resize, false);
+    window.addEventListener('load', _myChart.resize, false);
+    _myChart.off('click');
+    _myChart.on('click', (v: any) => {
       onClick?.(v.data);
       console.log(v.data)
     })
     return () => {
-      window.removeEventListener('resize', myChart.resize, false);
-      window.removeEventListener('load', myChart.resize, false);
-      myChart.dispose();
-      myChart = null;
+      console.log(2)
+      window.removeEventListener('resize', _myChart.resize, false);
+      window.removeEventListener('load', _myChart.resize, false);
+      _myChart.dispose();
     }
-  }, [data])
+  }, [])
+
+  useEffect(() => {
+    if (myChart) {
+      myChart.clear();
+      const _names: string[] = [];
+      data.length > 0 && data.map((item: any) => {
+        _names.push(item.name);
+      })
+      const _grid: GridComponentOption = {...{
+        top: '5%',
+        bottom: '10%',
+        left: '10%',
+        right: '5%',
+      }, ...grid};
+      const _xAxis: any = {
+        type: 'category',
+        boundaryGap: false,
+        axisLabel: {
+          color: xAxis.color ? xAxis.color : color,
+          fontSize: xAxis.fontSize ? xAxis.fontSize : fontSize,
+          rotate: xAxis.rotate ? xAxis.rotate : 0,
+        },
+        axisLine: {
+          show: xAxis.lineColor === false ? false : true,
+          lineStyle: {
+            color: xAxis.lineColor ? xAxis.lineColor : lineColor,
+          }
+        },
+        axisTick: {
+          show: xAxis.isTick,
+        },
+        splitLine: {
+          show: xAxis.splitColor ? true : false,
+          lineStyle: {
+            color: xAxis.splitColor ? xAxis.splitColor : splitColor,
+          }
+        },
+        data: _names
+      }
+      const _yAxis: any = {
+        name: yAxis.name,
+        type: 'value',
+        axisLabel: {
+          color: yAxis.color ? yAxis.color : color,
+          fontSize: yAxis.fontSize ? yAxis.fontSize : fontSize,
+        },
+        axisLine: {
+          show: yAxis.lineColor === false ? false : true,
+          lineStyle: {
+            color: yAxis.lineColor ? yAxis.lineColor : lineColor,
+          },
+        },
+        axisTick: {
+          show: false,
+        },
+        splitLine: {
+          show: yAxis.splitColor === false ? false : true,
+          lineStyle: {
+            color: yAxis.splitColor ? yAxis.splitColor : splitColor,
+          }
+        },
+      }
+      let _areaColor: any;
+      if (areaStyle.isGrad) {
+        if (Array.isArray(areaStyle.color) && areaStyle.color.length > 1) {
+          _areaColor = {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+              offset: 0, color: areaStyle.color[0]
+            }, {
+                offset: 1, color: areaStyle.color[1]
+            }],
+            global: false
+          }
+        } else {
+          _areaColor = {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+              offset: 0, color: colors[0]
+            }, {
+              offset: 1, color: 'rgba(255,255,255,0)'
+            }],
+            global: false
+          }
+        }
+      }
+      myChart.setOption({
+        tooltip: {
+          trigger: 'axis',
+          transitionDuration: 0,
+          enterable: true,
+          axisPointer: {
+            type: 'shadow'
+          }
+        },
+        color: colors,
+        grid: _grid,
+        xAxis: _xAxis,
+        yAxis: _yAxis,
+        series: [
+          {
+            data: data,
+            type: 'line',
+            smooth: smooth,
+            areaStyle: areaStyle.show ? {
+              color: _areaColor
+            } : undefined,
+            lineStyle: {
+              width: 1
+            }
+          }
+        ]
+      }, true);
+    }
+  }, [myChart, data])
   
+  useEffect(() => {
+    let faultByHourTime: any;
+    if (myChart && isSwitch && !isHigh && data.length > 0) {
+      faultByHourTime = setInterval(() => {
+        setHighIndex(n => {
+          myChart.dispatchAction({
+            type: 'showTip',
+            seriesIndex: 0,
+            dataIndex: n
+          });
+          if (n >= data.length - 1) {
+            return 0;
+          } else {
+            return n + 1
+          }
+        })
+      }, switchTime)
+    }
+    return () => {
+      clearInterval(faultByHourTime)
+    }
+  }, [myChart, isSwitch, isHigh, data])
+
   return (
-    <div ref={chartRef}  style={{
-      'width': width,
-      'height': height }}>
+    <div ref={chartRef}
+      style={{
+        'width': width,
+        'height': height
+      }}>
     </div>
   )
 }

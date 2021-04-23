@@ -5,13 +5,13 @@ react echarts line base
 ### 安装
 
 ```bash
-npm install --save @echarts/line-base
+npm install --save @ahwecharts/line-base
 ```
 
 ### 引入
 
 ```jsx
-import LineBase from '@echarts/line-base';
+import LineBase from '@ahwecharts/line-base';
 ```
 
 ### 基本用法
@@ -19,7 +19,7 @@ import LineBase from '@echarts/line-base';
 <!--DemoStart,bgWhite,codePen,codeSandbox--> 
 ```js
 import ReactDOM from 'react-dom';
-import Button from '@echarts/line-base';
+import Button from '@ahwecharts/line-base';
 
 ReactDOM.render(
   <div>
@@ -53,6 +53,7 @@ ReactDOM.render(
 | -------- | -------- | -------- | -------- |
 | width | 宽 | string | `100%` |
 | height | 高 | string | `100%` |
+| smooth | 是否平滑曲线显示 | boolean | `false` |
 | colors | 线条颜色 | string[] | -- |
 | color | 文字颜色 | string | `#333` |
 | lineColor | x, y轴轴线线条颜色 | string | `#abb9d0` |
@@ -62,6 +63,8 @@ ReactDOM.render(
 | xAxis | X 轴配置 | `xAxisProps` | -- |
 | yAxis | Y 轴配置 | `yAxisProps` | -- |
 | areaStyle | 区域填充样式 | `areaStyleProps` | -- |
+| isSwitch | 是否自动切换 Tooltip | boolean | `false` |
+| switchTime | 自动切换事件 | number | `2000` |
 | data | 数据 | any[] | [] |
 | onClick | 点击 | (v: any) => void | -- |
 
@@ -102,4 +105,4 @@ ReactDOM.render(
 | -------- | -------- | -------- | -------- |
 | show | 是否显示填充样式 | boolean | `false` |
 | isGrad | 是否渐变 | string | `#333` |
-| color | 渐变颜色不填则默认天线颜色 | string[color, color] | -- |
+| color | 渐变颜色不填则默认线条颜色 | string[color, color] | -- |

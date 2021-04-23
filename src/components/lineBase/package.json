@@ -1,12 +1,12 @@
 {
   "name": "@ahwecharts/line-base",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "echarts line base component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ybuiw/ahwui.git"
+    "url": "https://github.com/ybuiw/echarts"
   },
   "keywords": [
     "react",
