@@ -24,7 +24,7 @@ interface itemStyleProps {
     barWidth?: number;
     borderRadius?: number[];
 }
-interface LineBaseProps {
+interface BarBaseProps {
     data?: any[];
     width?: string;
     height?: string;
@@ -68,5 +68,5 @@ interface LineBaseProps {
     grid?: GridComponentOption;
     onClick?: (v: any) => void;
 }
-declare const EChartsBar: (props: LineBaseProps) => JSX.Element;
+declare const EChartsBar: (props: BarBaseProps) => JSX.Element;
 export default EChartsBar;

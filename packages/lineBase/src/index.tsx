@@ -77,7 +77,7 @@ interface LineBaseProps {
   onClick?: (v: any) => void;
 }
 
-const EChartsBar = (props: LineBaseProps) => {
+const EChartsLine = (props: LineBaseProps) => {
   const {
     width = '100%',
     height = '100%',
@@ -278,4 +278,4 @@ const EChartsBar = (props: LineBaseProps) => {
   )
 }
 
-export default EChartsBar;
+export default EChartsLine;

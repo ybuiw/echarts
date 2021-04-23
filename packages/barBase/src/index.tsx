@@ -37,7 +37,7 @@ interface itemStyleProps {
   borderRadius?: number[];
 }
 
-interface LineBaseProps {
+interface BarBaseProps {
   data?: any[];
   width?: string;
   height?: string;
@@ -82,7 +82,7 @@ interface LineBaseProps {
   onClick?: (v: any) => void;
 }
 
-const EChartsBar = (props: LineBaseProps) => {
+const EChartsBar = (props: BarBaseProps) => {
   const {
     width = '100%',
     height = '100%',

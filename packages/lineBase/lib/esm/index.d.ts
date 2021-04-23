@@ -64,5 +64,5 @@ interface LineBaseProps {
     grid?: GridComponentOption;
     onClick?: (v: any) => void;
 }
-declare const EChartsBar: (props: LineBaseProps) => JSX.Element;
-export default EChartsBar;
+declare const EChartsLine: (props: LineBaseProps) => JSX.Element;
+export default EChartsLine;

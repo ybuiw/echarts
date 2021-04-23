@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import  { BarBase } from '../components'
-// import { BarBaseEcharts } from 'ahwecharts'
+import { BarBaseEcharts } from 'ahwecharts'
+//import BarBaseEcharts from '@ahwecharts/bar-base'
 import './App.css';
 
 const App = () => {
@@ -42,7 +43,7 @@ const App = () => {
     <div className="App">
       <button onClick={a}>click mi</button>
       <button onClick={b}>click mi</button>
-      {/* <BarBaseEcharts height="300px"
+      <BarBaseEcharts height="300px"
         colors={color}
         isSwitch
         areaStyle={{
@@ -55,7 +56,7 @@ const App = () => {
           borderRadius: [5,5,5,5]
         }}
         data={item}
-      /> */}
+      />
     </div>
   );
 }
