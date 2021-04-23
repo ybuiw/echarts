@@ -9,8 +9,8 @@
     "test": "kkt test --env=jsdom",
     "test:coverage": "kkt test --env=jsdom --coverage",
     "type": "npm run t:cjs && npm run t:esm",
-    "t:esm": "lerna exec --scope @ahwecharts/* -- tsbb types --outDir lib/esm --target ESNEXT",
-    "t:cjs": "lerna exec --scope @ahwecharts/* -- tsbb types --outDir lib/cjs --target ESNEXT",
+    "t:esm": "lerna exec --scope @ahwecharts/* --scope ahwecharts -- tsbb types --outDir lib/esm --target ESNEXT",
+    "t:cjs": "lerna exec --scope @ahwecharts/* --scope ahwecharts -- tsbb types --outDir lib/cjs --target ESNEXT",
     "b:css": "lerna exec --scope @ahwecharts/* -- compile-less -d src -o lib/esm",
     "b:lib": "lerna exec --scope @ahwecharts/* -- tsbb build --target react",
     "watch": "lerna exec --scope @ahwecharts/* -- tsbb watch --target react",
@@ -27,6 +27,7 @@
   "dependencies": {
     "@ahwecharts/bar-base": "0.0.1",
     "@ahwecharts/line-base": "0.0.3",
+    "ahwecharts": "0.0.1",
     "echarts": "^5.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
