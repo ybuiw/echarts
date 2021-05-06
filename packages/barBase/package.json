@@ -1,6 +1,6 @@
 {
   "name": "@ahwecharts/bar-base",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "echarts bar base component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",

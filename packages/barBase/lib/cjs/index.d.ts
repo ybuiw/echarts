@@ -28,6 +28,8 @@ interface BarBaseProps {
     data?: any[];
     width?: string;
     height?: string;
+    /** 是否横排 */
+    isHorizontal?: boolean;
     /** 字体颜色 */
     color?: string;
     /** x, y轴轴线线条颜色 */

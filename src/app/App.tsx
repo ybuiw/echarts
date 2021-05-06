@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  { PieBaseEcharts } from '../components'
+import  { BarBaseEcharts } from '../components'
 // import { BarBaseEcharts } from 'ahwecharts'
 import './App.css';
 
@@ -42,20 +42,11 @@ const App = () => {
     <div className="App">
       <button onClick={a}>click mi</button>
       <button onClick={b}>click mi</button>
-      <PieBaseEcharts height="300px"
+      <BarBaseEcharts height="300px"
+        isHorizontal
         isSwitch
-        label={{
-          show: true,
-          formatter: '{b}\n{d}',
-          length: 20,
-          length2: 50,
-        }}
-        legend={{
-          show: true,
-        }}
-        series={{
-          radius: ['40%', '70%'],
-          center: ['50%', '40%']
+        itemStyle={{
+          barWidth: 14
         }}
         data={item}
       />

@@ -41,6 +41,8 @@ interface BarBaseProps {
   data?: any[];
   width?: string;
   height?: string;
+  /** 是否横排 */
+  isHorizontal?: boolean;
   /** 字体颜色 */
   color?: string;
   /** x, y轴轴线线条颜色 */
@@ -87,6 +89,7 @@ const EChartsBar = (props: BarBaseProps) => {
     width = '100%',
     height = '100%',
     colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
+    isHorizontal = false,
     color = '#333',
     lineColor = '#abb9d0',
     splitColor = '#e0e7f3',
@@ -142,6 +145,7 @@ const EChartsBar = (props: BarBaseProps) => {
       }, ...grid};
       const _xAxis: any = {
         type: 'category',
+        inverse: isHorizontal ? true : false,
         axisLabel: {
           color: xAxis.color ? xAxis.color : color,
           fontSize: xAxis.fontSize ? xAxis.fontSize : fontSize,
@@ -230,8 +234,8 @@ const EChartsBar = (props: BarBaseProps) => {
         },
         color: colors,
         grid: _grid,
-        xAxis: _xAxis,
-        yAxis: _yAxis,
+        xAxis: isHorizontal ? _yAxis : _xAxis,
+        yAxis: isHorizontal ? _xAxis : _yAxis,
         series: [
           {
             data: data,

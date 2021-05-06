@@ -56,6 +56,7 @@ ReactDOM.render(
 | -------- | -------- | -------- | -------- |
 | width | 宽 | string | `100%` |
 | height | 高 | string | `100%` |
+| isHorizontal | 是否横排 | boolean | `false` |
 | colors | 柱状图颜色 | string[] | -- |
 | color | 文字颜色 | string | `#333` |
 | lineColor | x, y轴轴线线条颜色 | string | `#abb9d0` |
