@@ -1,52 +1,68 @@
 import React, { useState } from 'react';
-import  { BarBaseEcharts } from '../components'
+import  { LineStackedEcharts } from '../components'
 // import { BarBaseEcharts } from 'ahwecharts'
 import './App.css';
 
 const App = () => {
   const [color, setColor] = useState<string[]>(['#f00'])
   const [item, setItem] = useState<any[]>([
-    { name: 'Mon', value: 20},
-    { name: 'Tue', value: 30},
-    { name: 'Wed', value: 224},
-    { name: 'Thu', value: 218},
-    { name: 'Fri', value: 135},
-    { name: 'Sat', value: 147},
-    { name: 'Sun', value: 260},
+    { 
+      name: '周一', 
+      child: [
+        { name: '邮件营销1', value: 120},
+        { name: '邮件营销2', value: 132},
+        { name: '邮件营销3', value: 101},
+        { name: '邮件营销4', value: 134},
+        { name: '邮件营销5', value: 90},
+      ]
+    },
+    { 
+      name: '周二', 
+      child: [
+        { name: '邮件营销1', value: 220},
+        { name: '邮件营销2', value: 182},
+        { name: '邮件营销3', value: 191},
+        { name: '邮件营销4', value: 234},
+        { name: '邮件营销5', value: 290},
+      ]
+    },
+    { 
+      name: '周三', 
+      child: [
+        { name: '邮件营销1', value: 150},
+        { name: '邮件营销2', value: 232},
+        { name: '邮件营销3', value: 201},
+        { name: '邮件营销4', value: 154},
+        { name: '邮件营销5', value: 190},
+      ]
+    },
+    { 
+      name: '周四', 
+      child: [
+        { name: '邮件营销1', value: 320},
+        { name: '邮件营销2', value: 332},
+        { name: '邮件营销3', value: 301},
+        { name: '邮件营销4', value: 334},
+        { name: '邮件营销5', value: 390},
+      ]
+    },
+    { 
+      name: '周五', 
+      child: [
+        { name: '邮件营销1', value: 820},
+        { name: '邮件营销2', value: 932},
+        { name: '邮件营销3', value: 901},
+        { name: '邮件营销4', value: 934},
+        { name: '邮件营销5', value: 1290},
+      ]
+    },
   ])
-  const a = () => {
-    setItem([
-      { name: 'MonMonMonMonMon', value: 2150},
-      { name: 'Tue', value: 1230},
-      { name: 'Wed', value: 1224},
-      { name: 'Thu', value: 1218},
-      { name: 'Fri', value: 1135},
-      { name: 'Sat', value: 1147},
-      { name: 'Sun', value: 1260},
-    ])
-    setColor(['#fff000'])
-  }
-  const b = () => {
-    setItem([
-      { name: 'MonMonMonMonMon', value: 150},
-      { name: 'Tue', value: 230},
-      { name: 'Wed', value: 224},
-      { name: 'Thu', value: 218},
-      { name: 'Fri', value: 135},
-      { name: 'Sat', value: 147},
-      { name: 'Sun', value: 260},
-    ])
-    setColor(['#ff0000'])
-  }
   return (
     <div className="App">
-      <button onClick={a}>click mi</button>
-      <button onClick={b}>click mi</button>
-      <BarBaseEcharts height="300px"
-        isHorizontal
-        isSwitch
-        itemStyle={{
-          barWidth: 14
+      <LineStackedEcharts height="300px"
+        smooth
+        areaStyle={{
+          show: true
         }}
         data={item}
       />

@@ -1,8 +1,7 @@
 {
-  "name": "ahwecharts",
-  "version": "0.0.6",
-  "description": "echarts component",
-  "typings": "lib/cjs/index.d.ts",
+  "name": "@ahwecharts/line-stacked",
+  "version": "1.0.0",
+  "description": "echarts line base component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "repository": {
@@ -12,8 +11,8 @@
   "keywords": [
     "react",
     "react-echarts",
-    "echarts",
-    "ahwecharts echarts"
+    "echarts line stacked",
+    "ahwui echarts line stacked"
   ],
   "publishConfig": {
     "access": "public"
@@ -27,10 +26,6 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@ahwecharts/bar-base": "^1.0.2",
-    "@ahwecharts/line-base": "^1.0.0",
-    "@ahwecharts/line-stacked": "^1.0.0",
-    "@ahwecharts/pie-base": "^1.0.0",
     "echarts": "^5.0.2"
   }
 }

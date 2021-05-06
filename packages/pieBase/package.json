@@ -1,6 +1,6 @@
 {
   "name": "@ahwecharts/pie-base",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "echarts line base component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",

@@ -106,7 +106,7 @@ const EChartsPie = (props: PieBaseProps) => {
         bottom: '5%',
         left: 'center',
         icon: 'circle',
-        show: true
+        show: true,
       }, ...legend};
       myChart.setOption({
         tooltip: {

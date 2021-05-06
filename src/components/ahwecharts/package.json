@@ -27,9 +27,10 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@ahwecharts/bar-base": "^1.0.0",
+    "@ahwecharts/bar-base": "^1.0.2",
     "@ahwecharts/line-base": "^1.0.0",
-    "@ahwecharts/pie-base": "^0.0.1",
+    "@ahwecharts/line-stacked": "^1.0.0",
+    "@ahwecharts/pie-base": "^1.0.0",
     "echarts": "^5.0.2"
   }
 }
