@@ -1,6 +1,6 @@
 {
   "name": "ahwecharts",
-  "version": "0.0.7",
+  "version": "0.0.6",
   "description": "echarts component",
   "typings": "lib/cjs/index.d.ts",
   "main": "lib/cjs/index.js",
