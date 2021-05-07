@@ -5,7 +5,7 @@ react echarts line stacked
 ### 安装
 
 ```bash
-npm install --save @ahwecharts/line-base
+npm install --save @ahwecharts/line-stacked
 ```
 
 ### 引入
@@ -27,7 +27,6 @@ ReactDOM.render(
   <div>
     <LineStackedEcharts
       smooth
-      colors={['#f00']}
       areaStyle={{
         show: true,
         isGrad: true
@@ -119,7 +118,7 @@ ReactDOM.render(
 | 参数 | 说明 | 类型 | 默认值 |
 | -------- | -------- | -------- | -------- |
 | name | 健 | string | -- |
-| child | 值 | any[] | -- |
+| child | 值 | any[{name: string, value: number}] | -- |
 
 
 ## Props xAxisProps
