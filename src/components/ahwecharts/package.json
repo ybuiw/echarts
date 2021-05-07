@@ -1,6 +1,6 @@
 {
   "name": "ahwecharts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "echarts component",
   "typings": "lib/cjs/index.d.ts",
   "main": "lib/cjs/index.js",
@@ -29,7 +29,7 @@
   "dependencies": {
     "@ahwecharts/bar-base": "^1.0.2",
     "@ahwecharts/line-base": "^1.0.0",
-    "@ahwecharts/line-stacked": "^1.0.0",
+    "@ahwecharts/line-stacked": "^1.0.1",
     "@ahwecharts/pie-base": "^1.0.0",
     "echarts": "^5.0.2"
   }
