@@ -67,7 +67,7 @@ ReactDOM.render(
 | series | 饼图属性 | `SeriesProps` | -- |
 | legend | 图例属性 | `LegendComponentOption` | -- |
 | isSwitch | 是否自动切换 Tooltip | boolean | `false` |
-| switchTime | 自动切换事件 | number | `2000` |
+| switchTime | 自动切换时间 | number | `2000` |
 | data | 数据 | any[] | [] |
 | onClick | 点击 | (v: any) => void | -- |
 

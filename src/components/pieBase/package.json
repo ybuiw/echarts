@@ -1,6 +1,6 @@
 {
   "name": "@ahwecharts/pie-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "echarts line base component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -27,5 +27,6 @@
   },
   "dependencies": {
     "echarts": "^5.0.2"
-  }
+  },
+  "gitHead": "9e8c0357b7b8c14b5dc9e713f5c9653fcde62dfe"
 }
