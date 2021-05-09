@@ -1,0 +1,31 @@
+{
+  "name": "@ahwecharts/bar-stacked",
+  "version": "1.0.0",
+  "description": "echarts bar stacked component",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ybuiw/echarts"
+  },
+  "keywords": [
+    "react",
+    "react-echarts",
+    "echarts bar stacked",
+    "ahwui echarts bar stacked"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "uub",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {
+    "echarts": "^5.0.2"
+  }
+}
