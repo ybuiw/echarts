@@ -10,5 +10,7 @@ npm install --save ahwecharts
 
 
 ### @ahwecharts/line-base
+### @ahwecharts/line-stacked
 ### @ahwecharts/bar-base
+### @ahwecharts/bar-stacked
 ### @ahwecharts/pie-base
